@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VLAN - Virtual Local Area Network</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,#0f172a,#1e293b);
+    color:white;
+    overflow-x:hidden;
+}
+
+header{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+    position:relative;
+}
+
+header::before{
+    content:"";
+    position:absolute;
+    width:600px;
+    height:600px;
+    background:#3b82f6;
+    filter:blur(180px);
+    opacity:0.25;
+    z-index:0;
+}
+
+.hero{
+    position:relative;
+    z-index:1;
+    animation:fade 1s ease;
+}
+
+.hero h1{
+    font-size:4rem;
+    margin-bottom:20px;
+    color:#60a5fa;
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+    font-size:1.2rem;
+    opacity:0.9;
+}
+
+.btn{
+    margin-top:30px;
+    padding:15px 35px;
+    border:none;
+    border-radius:12px;
+    background:#3b82f6;
+    color:white;
+    font-size:1rem;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:0 0 20px rgba(59,130,246,0.5);
+}
+
+.btn:hover{
+    transform:scale(1.08);
+    background:#2563eb;
+}
+
+section{
+    padding:80px 10%;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    margin-top:40px;
+}
+
+.card{
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:20px;
+    padding:30px;
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+.card h2{
+    color:#60a5fa;
+    margin-bottom:15px;
+}
+
+.card p{
+    opacity:0.9;
+    line-height:1.6;
+}
+
+.network{
+    margin-top:60px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:50px;
+    flex-wrap:wrap;
+}
+
+.switch{
+    width:180px;
+    height:100px;
+    background:#1e40af;
+    border-radius:15px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+    font-size:1.2rem;
+    position:relative;
+    animation:pulse 2s infinite;
+}
+
+.vlan{
+    width:140px;
+    height:70px;
+    border-radius:15px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.vlan:hover{
+    transform:scale(1.1);
+}
+
+.red{ background:#ef4444; }
+.green{ background:#22c55e; }
+.blue{ background:#3b82f6; }
+
+.line{
+    width:60px;
+    height:4px;
+    background:white;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    background:#020617;
+    opacity:0.8;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes pulse{
+    0%{
+        box-shadow:0 0 0 0 rgba(59,130,246,0.7);
+    }
+    70%{
+        box-shadow:0 0 0 25px rgba(59,130,246,0);
+    }
+    100%{
+        box-shadow:0 0 0 0 rgba(59,130,246,0);
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="hero">
+    <h1>VLAN</h1>
+    <p>
+        VLAN (Virtual Local Area Network) permite criar redes lógicas isoladas
+        dentro de um único switch físico, aumentando segurança, flexibilidade
+        e eficiência da rede.
+    </p>
+
+    <button class="btn" onclick="mostrarMensagem()">
+        Explorar VLAN
+    </button>
+</div>
+
+</header>
+
+<section>
+
+<h1 style="text-align:center; font-size:2.5rem;">
+Benefícios da VLAN
+</h1>
+
+<div class="cards">
+
+    <div class="card">
+        <h2>🔒 Segurança</h2>
+        <p>
+            VLANs isolam setores diferentes da empresa, protegendo dados e
+            separando tráfego sensível.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>⚡ Flexibilidade</h2>
+        <p>
+            É possível reorganizar dispositivos na rede sem alterar cabos
+            físicos.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>📡 Eficiência</h2>
+        <p>
+            Reduz broadcasts desnecessários e melhora o desempenho geral da rede.
+        </p>
+    </div>
+
+</div>
+
+<div class="network">
+
+    <div class="vlan red">
+        VLAN 10
+    </div>
+
+    <div class="line"></div>
+
+    <div class="switch">
+        SWITCH
+    </div>
+
+    <div class="line"></div>
+
+    <div class="vlan green">
+        VLAN 20
+    </div>
+
+    <div class="line"></div>
+
+    <div class="vlan blue">
+        VLAN 30
+    </div>
+
+</div>
+
+</section>
+
+<footer>
+    Desenvolvido para apresentação de Redes • VLAN
+</footer>
+
+<script>
+
+function mostrarMensagem(){
+    alert("VLANs permitem separar redes lógicas dentro de um mesmo switch físico!");
+}
+
+</script>
+
+</body>
+</html>
